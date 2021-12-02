@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Closer">
         <activity
+            android:name=".Signup"
+            android:exported="true" />
+        <activity
             android:name=".design4"
             android:exported="true" />
         <activity
