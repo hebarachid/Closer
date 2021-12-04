@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/group_10150" />
 
     <ImageButton
@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.698"
+        app:layout_constraintVertical_bias="0.78"
         app:srcCompat="@drawable/skip"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -47,6 +47,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView12"
         app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.591"
         app:srcCompat="@drawable/next"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
