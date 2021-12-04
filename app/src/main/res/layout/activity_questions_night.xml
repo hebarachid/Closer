@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baby_pink"
+    tools:context=".QuestionsNight">
+
+    <ImageView
+        android:id="@+id/imageView62"
+        android:layout_width="336dp"
+        android:layout_height="191dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView61"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/message_popup_questions" />
+
+    <ImageView
+        android:id="@+id/imageView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.101"
+        app:srcCompat="@drawable/text_question" />
+
+    <ImageView
+        android:id="@+id/imageView57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView55"
+        app:layout_constraintVertical_bias="0.091"
+        app:srcCompat="@drawable/habit_name" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="333dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="1.When did we first kiss"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView57"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView57"
+        app:layout_constraintTop_toTopOf="@+id/imageView57"
+        app:layout_constraintVertical_bias="0.757" />
+
+    <ImageView
+        android:id="@+id/imageView60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView57"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/habit_name" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="333dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="2.Which dress did I wear on our first date"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView60"
+        app:layout_constraintEnd_toEndOf="@+id/imageView60"
+        app:layout_constraintStart_toStartOf="@+id/imageView60"
+        app:layout_constraintTop_toBottomOf="@+id/imageView57"
+        app:layout_constraintVertical_bias="0.642" />
+
+    <ImageView
+        android:id="@+id/imageView61"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView60"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/habit_name" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="333dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="3.How much did I pay on our first date"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView61"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView61"
+        app:layout_constraintTop_toBottomOf="@+id/imageView60"
+        app:layout_constraintVertical_bias="0.685" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-30dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView61"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/plus_button_question"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

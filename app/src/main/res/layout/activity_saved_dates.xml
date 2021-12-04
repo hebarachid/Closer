@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baby_pink"
+    tools:context=".savedDates">
+
+    <ImageView
+        android:id="@+id/imageView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="154dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView45"
+        app:layout_constraintEnd_toEndOf="@+id/imageView45"
+        app:layout_constraintStart_toStartOf="@+id/imageView45"
+        app:layout_constraintTop_toTopOf="@+id/imageView45"
+        app:srcCompat="@drawable/message_popup" />
+
+    <ImageView
+        android:id="@+id/imageView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/background_savedate" />
+
+    <ImageView
+        android:id="@+id/imageView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/imageView45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184"
+        app:srcCompat="@drawable/text_saved" />
+
+    <ImageView
+        android:id="@+id/imageView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/imageView45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView46"
+        app:layout_constraintVertical_bias="0.344"
+        app:srcCompat="@drawable/savedate1" />
+
+    <ImageView
+        android:id="@+id/imageView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/imageView45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toEndOf="@+id/imageView47"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.587"
+        app:srcCompat="@drawable/rectangle_23897" />
+
+    <ImageView
+        android:id="@+id/imageView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView48"
+        app:layout_constraintEnd_toEndOf="@+id/imageView48"
+        app:layout_constraintStart_toEndOf="@+id/imageView47"
+        app:layout_constraintTop_toTopOf="@+id/imageView48"
+        app:srcCompat="@drawable/fa_solid_book_reader" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toTopOf="@+id/imageView49"
+        app:layout_constraintEnd_toEndOf="@+id/imageView48"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView49"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/akar_icons_circle_plus_fill"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView50"
+        android:layout_width="368dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView47"
+        app:layout_constraintVertical_bias="0.619"
+        app:srcCompat="@drawable/rectangle_23778" />
+
+    <ImageView
+        android:id="@+id/imageView51"
+        android:layout_width="368dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="421dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView45"
+        app:layout_constraintEnd_toEndOf="@+id/imageView45"
+        app:layout_constraintStart_toStartOf="@+id/imageView45"
+        app:layout_constraintTop_toTopOf="@+id/imageView45"
+        app:srcCompat="@drawable/rectangle_23778" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="167dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginEnd="121dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView45"
+        app:layout_constraintEnd_toEndOf="@+id/imageView45"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView45"
+        app:layout_constraintTop_toTopOf="@+id/imageView45"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/check_button"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

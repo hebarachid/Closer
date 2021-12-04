@@ -10,6 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Closer">
         <activity
+            android:name=".MovieNight"
+            android:exported="true" />
+        <activity
+            android:name=".Countdown"
+            android:exported="true" />
+        <activity
+            android:name=".DateNights"
+            android:exported="true" />
+        <activity
+            android:name=".QuestionsNight"
+            android:exported="true" />
+        <activity
+            android:name=".Calender"
+            android:exported="true" />
+        <activity
+            android:name=".savedDates"
+            android:exported="true" />
+        <activity
+            android:name=".HomePage"
+            android:exported="true" />
+        <activity
+            android:name=".AddPartner"
+            android:exported="true" />
+        <activity
+            android:name=".login"
+            android:exported="true" />
+        <activity
             android:name=".Signup"
             android:exported="true" />
         <activity
