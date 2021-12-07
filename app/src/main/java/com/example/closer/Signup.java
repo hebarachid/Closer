@@ -3,6 +3,7 @@ package com.example.closer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,9 +45,11 @@ public class Signup extends AppCompatActivity {
                             if(snapshot.hasChild(emailTxt)){
                                 Log.i("reg","already");
                             }else{
+                                final String partnerEmailTxt="A";
                                 databaseReference.child("users").child(emailTxt).child("Name").setValue(nameTxt);
                                 databaseReference.child("users").child(emailTxt).child("Password").setValue(passwordTxt);
-
+                                databaseReference.child("users").child(emailTxt).child("Email").setValue(emailTxt);
+                                databaseReference.child("users").child(emailTxt).child("PartnerEmail").setValue(partnerEmailTxt);
                                 Log.i("success","success");
                                 finish();
                             }
@@ -60,6 +63,11 @@ public class Signup extends AppCompatActivity {
 
 
                 }
+                Intent intent = new Intent(getApplicationContext(), AddPartner.class);
+                String message = emailTxt;
+                intent.putExtra("emailOfTheUser", message);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             }
         });
     }
