@@ -1,5 +1,6 @@
 package com.example.closer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,9 +10,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
-
+ DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://closer-33bb6-default-rtdb.firebaseio.com/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +28,24 @@ public class login extends AppCompatActivity {
         final EditText password=findViewById(R.id.Password);
         final ImageButton loginBtn=findViewById(R.id.login);
         final ImageButton signupBtn=findViewById(R.id.signup);
+        String userEmail;
+        String partnerEmail;
+
+
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                userEmail= null;
+                partnerEmail= null;
+            } else {
+                userEmail= extras.getString("emailOfTheUser");
+                partnerEmail= extras.getString("emailOfThePartner");
+            }
+        } else {
+            userEmail= (String) savedInstanceState.getSerializable("emailOfTheUser");
+            partnerEmail= (String) savedInstanceState.getSerializable("emailOfThePartner");
+        }
+
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +57,36 @@ public class login extends AppCompatActivity {
                     Log.i("empty","empty");
                 }
                 else{
+                      databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                          @Override
+                          public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                              if(snapshot.hasChild(emailTxt)){
+                                  //email exists in database
+                                  //get database and check
+                                  final String getPassword=snapshot.child(emailTxt).child("Password").getValue(String.class);
+
+                                  if(getPassword.equals(passwordTxt)){
+                                      Toast.makeText(login.this,"Successfully logged in",Toast.LENGTH_SHORT).show();
+                                      Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                                      intent.putExtra("emailOfTheUser", userEmail);
+                                      intent.putExtra("emailOfThePartner", partnerEmail);
+                                      startActivity(intent);
+                                      finish();
+                                  }
+                                  else{
+                                      Toast.makeText(login.this,"Wrong Password",Toast.LENGTH_SHORT).show();
+                                  }
+                              } else{
+                                  Toast.makeText(login.this,"Wrong Password",Toast.LENGTH_SHORT).show();
+                              }
+                          }
+
+                          @Override
+                          public void onCancelled(@NonNull DatabaseError error) {
+
+                          }
+                      });
                 }
 
             }

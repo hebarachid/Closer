@@ -3,6 +3,7 @@ package com.example.closer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class AddPartner extends AppCompatActivity {
     EditText partnerEmail;
     String userEmail;
+    String partnerEmailtxt;
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference()
             ;
     @Override
@@ -42,7 +44,7 @@ public class AddPartner extends AppCompatActivity {
     }
 
     public void sendLink(View view) {
-     final String partnerEmailtxt= partnerEmail.getText().toString();
+      partnerEmailtxt= partnerEmail.getText().toString();
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -62,6 +64,11 @@ public class AddPartner extends AppCompatActivity {
 
             }
         });
+        Intent intent = new Intent(getApplicationContext(), login.class);
 
+        intent.putExtra("emailOfTheUser", userEmail);
+        intent.putExtra("emailOfThePartner", partnerEmailtxt);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 }
