@@ -1,8 +1,10 @@
 package com.example.closer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -15,6 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 public class AddPartner extends AppCompatActivity {
     EditText partnerEmail;
     String userEmail;
+    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference()
+            ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,21 +41,27 @@ public class AddPartner extends AppCompatActivity {
 
     }
 
-    public void sendLink(View view){
-        final String partnerEmailtxt=partnerEmail.getText().toString();
+    public void sendLink(View view) {
+     final String partnerEmailtxt= partnerEmail.getText().toString();
 
-        FirebaseDatabase.getInstance().getReference().child("users").child(userEmail).child("PartnerEmail")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                           snapshot.getRef().setValue(partnerEmailtxt);
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChild(userEmail)){
+                    Log.i("reg","already");
+                }else{
 
-                        }
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
+                    databaseReference.child("users").child(userEmail).child("PartnerEmail").setValue(partnerEmailtxt);
+                    Log.i("success","success");
+                    finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 }
