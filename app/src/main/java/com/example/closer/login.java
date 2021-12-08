@@ -19,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
+    String userEmail;
+    String partnerEmail;
  DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://closer-33bb6-default-rtdb.firebaseio.com/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +30,16 @@ public class login extends AppCompatActivity {
         final EditText password=findViewById(R.id.Password);
         final ImageButton loginBtn=findViewById(R.id.login);
         final ImageButton signupBtn=findViewById(R.id.signup);
-        String userEmail;
-        String partnerEmail;
 
-
-        if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
                 userEmail= null;
                 partnerEmail= null;
             } else {
                 userEmail= extras.getString("emailOfTheUser");
-                partnerEmail= extras.getString("emailOfThePartner");
+
             }
-        } else {
-            userEmail= (String) savedInstanceState.getSerializable("emailOfTheUser");
-            partnerEmail= (String) savedInstanceState.getSerializable("emailOfThePartner");
-        }
+
 
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -68,9 +63,11 @@ public class login extends AppCompatActivity {
 
                                   if(getPassword.equals(passwordTxt)){
                                       Toast.makeText(login.this,"Successfully logged in",Toast.LENGTH_SHORT).show();
+                                      partnerEmail=snapshot.child(emailTxt).child("PartnerEmail").getValue(String.class);
                                       Intent intent = new Intent(getApplicationContext(), HomePage.class);
-                                      intent.putExtra("emailOfTheUser", userEmail);
-                                      intent.putExtra("emailOfThePartner", partnerEmail);
+                                      intent.putExtra("emailOfTheUser", emailTxt);
+                                      intent.putExtra("emailOfThePartner",partnerEmail);
+
                                       startActivity(intent);
                                       finish();
                                   }
