@@ -18,7 +18,7 @@
         app:layout_constraintBottom_toTopOf="@+id/partnertxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.769"
-        app:layout_constraintStart_toEndOf="@+id/imageView37"
+        app:layout_constraintStart_toEndOf="@+id/heart"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView37"
+        app:layout_constraintStart_toEndOf="@+id/heart"
         app:layout_constraintTop_toBottomOf="@+id/usertxt" />
 
     <ImageView
@@ -71,61 +71,72 @@
         android:layout_marginStart="147dp"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="147dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView37"
+        app:layout_constraintBottom_toTopOf="@+id/heart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView34"
         app:srcCompat="@drawable/tap_the_heart" />
 
-    <ImageView
-        android:id="@+id/imageView37"
+    <ImageButton
+        android:id="@+id/heart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
         android:layout_marginEnd="176dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView38"
+        android:background="#00000000"
+        android:onClick="heartTap"
+        app:layout_constraintBottom_toTopOf="@+id/send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView36"
-        app:srcCompat="@drawable/rectangle_23888" />
+        app:srcCompat="@drawable/rectangle_23888"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView38"
+    <ImageButton
+        android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView37"
-        app:srcCompat="@drawable/text_send" />
+        app:layout_constraintTop_toBottomOf="@+id/heart"
+        app:srcCompat="@drawable/text_send"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/imageView39"
         android:layout_width="76dp"
         android:layout_height="84dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView40"
+        app:layout_constraintBottom_toTopOf="@+id/hug"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView38"
+        app:layout_constraintTop_toBottomOf="@+id/send"
         app:layout_constraintVertical_bias="0.418"
         app:srcCompat="@drawable/rectangle_23890" />
 
-    <ImageView
-        android:id="@+id/imageView40"
+    <ImageButton
+        android:id="@+id/hug"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="329dp"
         android:layout_marginBottom="348dp"
+        android:background="#00000000"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="hugTap"
         app:layout_constraintBottom_toBottomOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="@+id/imageView33"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView33"
         app:layout_constraintTop_toTopOf="@+id/imageView33"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/text" />
+        app:srcCompat="@drawable/text"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/imageView41"
@@ -135,8 +146,8 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView33"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/imageView33"
-        app:layout_constraintTop_toBottomOf="@+id/imageView38"
-        app:layout_constraintVertical_bias="0.088"
+        app:layout_constraintTop_toBottomOf="@+id/send"
+        app:layout_constraintVertical_bias="0.039"
         app:srcCompat="@drawable/rectangle_23892" />
 
     <ImageView
@@ -151,46 +162,58 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/rectangle_23891" />
 
-    <ImageView
-        android:id="@+id/imageView43"
+    <ImageButton
+        android:id="@+id/poke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="168dp"
         android:layout_marginEnd="168dp"
         android:layout_marginBottom="314dp"
+        android:background="#00000000"
+        android:minHeight="48dp"
+        android:onClick="pokeTap"
         app:layout_constraintBottom_toBottomOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="@+id/imageView33"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView33"
         app:layout_constraintTop_toBottomOf="@+id/imageView41"
-        app:srcCompat="@drawable/pig_text" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/pig_text"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView44"
+    <ImageButton
+        android:id="@+id/kiss"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="302dp"
         android:layout_marginEnd="34dp"
         android:layout_marginBottom="366dp"
+        android:background="#00000000"
+        android:minHeight="48dp"
+        android:onClick="kissTap"
         app:layout_constraintBottom_toBottomOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="@+id/imageView33"
         app:layout_constraintStart_toStartOf="@+id/imageView33"
         app:layout_constraintTop_toBottomOf="@+id/imageView42"
-        app:srcCompat="@drawable/kisstext" />
+        app:srcCompat="@drawable/kisstext"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="206dp"
+        android:layout_marginTop="170dp"
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="187dp"
         android:background="#00000000"
         android:onClick="checkCalender"
         app:layout_constraintBottom_toBottomOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="@+id/imageView33"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView33"
         app:layout_constraintTop_toTopOf="@+id/imageView33"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/home_button1"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -199,7 +222,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="116dp"
         android:background="#00000000"
@@ -215,7 +238,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="43dp"
         android:background="#00000000"
@@ -224,5 +247,19 @@
         app:layout_constraintStart_toStartOf="@+id/imageView33"
         app:layout_constraintTop_toTopOf="@+id/imageButton6"
         app:srcCompat="@drawable/homebutton3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="341dp"
+        android:layout_height="64dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poke"
+        app:layout_constraintVertical_bias="0.818"
+        app:srcCompat="@drawable/homepagenotificationpng"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

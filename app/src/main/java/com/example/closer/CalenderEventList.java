@@ -1,11 +1,14 @@
 package com.example.closer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,27 +25,28 @@ public class CalenderEventList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender_event_list);
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference allBooksRef = rootRef.child("Reminder").child("heba");
-        ValueEventListener valueEventListener = new ValueEventListener() {
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://closer-33bb6-default-rtdb.firebaseio.com/");
+        List<String> EventList = new ArrayList<String>();
+
+
+        databaseReference.child("Reminder").child("heba").child("2021-11-15").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                List<String> EventList = new ArrayList<String>();
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                    String event = ds.child("Event").getValue(String.class);
-                    String Date = ds.child("Date").getValue(String.class);
-                    String combined=event+" in date "+Date;
-                    Log.i("he",combined);
-                    EventList.add(combined);
-                }
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    final String getEvent=snapshot.child("Event").getValue(String.class);
+                    final String getDate=snapshot.child("Date").getValue(String.class);
+                String combined=getEvent+" in date "+getDate;
+                Log.i("he",getDate);
+                EventList.add(combined);
                 ListView list = (ListView) findViewById(R.id.listViewEvents);
                 ArrayAdapter<String> arr=new ArrayAdapter<String>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,EventList);
                 list.setAdapter(arr);
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {}
-        };
-        allBooksRef.addListenerForSingleValueEvent(valueEventListener);
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

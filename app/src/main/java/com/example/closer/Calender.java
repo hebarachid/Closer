@@ -3,6 +3,7 @@ package com.example.closer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -76,5 +77,14 @@ String selectedDate;
 
             }
         });
+
+    }
+
+    public void checkEvents(View view) {
+        Intent intent = new Intent(getApplicationContext(), CalenderEventList.class);
+        String message = userEmail;
+        intent.putExtra("emailOfTheUser", message);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 }
