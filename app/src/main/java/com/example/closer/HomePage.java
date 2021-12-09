@@ -2,8 +2,10 @@ package com.example.closer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class HomePage extends AppCompatActivity {
@@ -41,5 +43,11 @@ String partnerEmail;
     }
 
 
-
+    public void checkCalender(View view) {
+        Intent intent = new Intent(getApplicationContext(), Calender.class);
+        intent.putExtra("emailOfTheUser", userEmail);
+        intent.putExtra("emailOfThePartner", partnerEmail);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+    }
 }
