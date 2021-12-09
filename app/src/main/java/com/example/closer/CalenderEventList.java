@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -41,6 +43,7 @@ public class CalenderEventList extends AppCompatActivity {
                 ListView list = (ListView) findViewById(R.id.listViewEvents);
                 ArrayAdapter<String> arr=new ArrayAdapter<String>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,EventList);
                 list.setAdapter(arr);
+
             }
 
             @Override

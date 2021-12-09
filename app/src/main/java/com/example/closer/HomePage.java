@@ -146,4 +146,11 @@ String currentDate=formatter.format(date);
             }
         });
     }
+
+    public void MovieRecommendations(View view) {
+        Intent intent = new Intent(getApplicationContext(), MovieNight.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
+    }
 }
