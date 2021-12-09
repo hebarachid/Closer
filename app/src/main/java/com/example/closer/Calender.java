@@ -60,10 +60,12 @@ String selectedDate;
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    databaseReference.child("Reminder").child(userEmail).child("userEmail").setValue(userEmail);
-                    databaseReference.child("Reminder").child(userEmail).child("Date").setValue(selectedDate);
-                    databaseReference.child("Reminder").child(userEmail).child("Event").setValue(eventDetails);
-                    databaseReference.child("Reminder").child(userEmail).child("PartnerEmail").setValue(partnerEmail);
+                    databaseReference.child("Reminder").child(userEmail).child(selectedDate).child("userEmail").setValue(userEmail);
+                    databaseReference.child("Reminder").child(userEmail).child(selectedDate).setValue(selectedDate);
+                    databaseReference.child("Reminder").child(userEmail).child(selectedDate).child("Event").setValue(eventDetails);
+                    databaseReference.child("Reminder").child(userEmail).child(selectedDate).child("PartnerEmail").setValue(partnerEmail);
+                databaseReference.child("Reminder").child(userEmail).child(selectedDate).child("Date").setValue(selectedDate);
+                databaseReference.child("Reminder").child(userEmail).child(selectedDate).child("userEmail").setValue(userEmail);
                     Log.i("success","success");
                     finish();
                 }
