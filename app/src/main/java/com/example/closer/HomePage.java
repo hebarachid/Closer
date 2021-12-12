@@ -153,4 +153,10 @@ String currentDate=formatter.format(date);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
     }
+
+    public void CountdownTime(View view) {
+        Intent intent = new Intent(getApplicationContext(), Countdown.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+    }
 }

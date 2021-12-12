@@ -27,11 +27,27 @@ public class CalenderEventList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender_event_list);
+        String userEmail;
+        String selectedDate;
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://closer-33bb6-default-rtdb.firebaseio.com/");
         List<String> EventList = new ArrayList<String>();
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                userEmail= null;
+                selectedDate=null;
+            } else {
+                userEmail= extras.getString("emailOfTheUser");
+                selectedDate= extras.getString("dateReminder");
+                Log.i("hey",userEmail);
+                Log.i("woho",selectedDate);
+            }
+        } else {
+            userEmail= (String) savedInstanceState.getSerializable("emailOfTheUser");
+            selectedDate= (String) savedInstanceState.getSerializable("dateReminder");
+        }
 
-
-        databaseReference.child("Reminder").child("heba").child("2021-11-15").addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child("Reminder").child(userEmail).child(selectedDate).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 

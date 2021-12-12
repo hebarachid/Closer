@@ -226,11 +226,12 @@
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="116dp"
         android:background="#00000000"
+        android:onClick="CountdownTime"
         app:layout_constraintBottom_toBottomOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="@+id/imageView33"
         app:layout_constraintStart_toStartOf="@+id/imageView33"
         app:layout_constraintTop_toTopOf="@+id/imageButton5"
-        app:srcCompat="@drawable/homebutton2"
+        app:srcCompat="@drawable/countdownbutton"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -245,8 +246,10 @@
         android:onClick="MovieRecommendations"
         app:layout_constraintBottom_toBottomOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="@+id/imageView33"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView33"
         app:layout_constraintTop_toTopOf="@+id/imageButton6"
+        app:layout_constraintVertical_bias="0.259"
         app:srcCompat="@drawable/homebutton3"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -257,10 +260,9 @@
         android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="@+id/imageView33"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/poke"
-        app:layout_constraintVertical_bias="0.818"
+        app:layout_constraintVertical_bias="0.764"
         app:srcCompat="@drawable/homepagenotificationpng"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

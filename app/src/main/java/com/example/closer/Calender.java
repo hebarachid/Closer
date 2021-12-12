@@ -49,6 +49,7 @@ String selectedDate;
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
             selectedDate=Integer.toString(i)+"-"+Integer.toString(i1)+"-"+Integer.toString(i2);
+            Log.i("wtf",selectedDate);
             }
         });
 
@@ -84,6 +85,8 @@ String selectedDate;
         Intent intent = new Intent(getApplicationContext(), CalenderEventList.class);
         String message = userEmail;
         intent.putExtra("emailOfTheUser", message);
+        intent.putExtra("dateReminder", selectedDate);
+        Log.i("w er",selectedDate);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
