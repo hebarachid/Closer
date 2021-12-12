@@ -21,7 +21,7 @@ import java.util.Date;
 public class HomePage extends AppCompatActivity {
 String userEmail;
 String partnerEmail;
-    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy-HH:mm:ss");
     Date date = new Date();
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
     @Override
@@ -73,7 +73,7 @@ String currentDate=formatter.format(date);
                     databaseReference.child("Notifications").child("heart").child(partnerEmail).setValue("receives");
                     databaseReference.child("Notifications").child("heart").child("Date").setValue(currentDate);
                     Log.i("success","success");
-                    finish();
+
 
             }
 
@@ -94,7 +94,7 @@ String currentDate=formatter.format(date);
                 databaseReference.child("Notifications").child("hug").child(partnerEmail).setValue("receives");
                 databaseReference.child("Notifications").child("hug").child("Date").setValue(currentDate);
                 Log.i("success","success");
-                finish();
+
 
             }
 
@@ -115,7 +115,7 @@ String currentDate=formatter.format(date);
                 databaseReference.child("Notifications").child("Poke").child(partnerEmail).setValue("receives");
                 databaseReference.child("Notifications").child("Poke").child("Date").setValue(currentDate);
                 Log.i("success","success");
-                finish();
+
 
             }
 
@@ -136,7 +136,7 @@ String currentDate=formatter.format(date);
                 databaseReference.child("Notifications").child("Kiss").child(partnerEmail).setValue("receives");
                 databaseReference.child("Notifications").child("Kiss").child("Date").setValue(currentDate);
                 Log.i("success","success");
-                finish();
+
 
             }
 
@@ -162,6 +162,14 @@ String currentDate=formatter.format(date);
 
     public void Randomize(View view) {
         Intent intent = new Intent(getApplicationContext(), QuestionsNight.class);
+        intent.putExtra("userEmail",userEmail);
+        intent.putExtra("partnerEmail",partnerEmail);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+    }
+
+    public void notifications(View view) {
+        Intent intent = new Intent(getApplicationContext(), Notifications.class);
         intent.putExtra("userEmail",userEmail);
         intent.putExtra("partnerEmail",partnerEmail);
         startActivity(intent);
