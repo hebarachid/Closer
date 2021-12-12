@@ -3,39 +3,136 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@color/purple">
 
-    <TextView
-        android:id="@+id/MovieText1"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="sans-serif-black"
-        android:text="TextView"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/ImageMovie"
-        app:layout_constraintHorizontal_bias="0.123"
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="339dp"
+        android:layout_height="448dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872"
+        app:srcCompat="@drawable/rectangle" />
 
-    <TextView
-        android:id="@+id/MovieText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/MovieText1"
-        app:layout_constraintStart_toStartOf="@+id/MovieText1"
-        tools:layout_editor_absoluteY="70dp" />
+    <ImageView
+        android:id="@+id/imageView40"
+        android:layout_width="63dp"
+        android:layout_height="27dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+        app:layout_constraintEnd_toEndOf="@+id/imageView37"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="@+id/imageView37"
+        app:layout_constraintTop_toBottomOf="@+id/MovieText2"
+        app:layout_constraintVertical_bias="0.105"
+        app:srcCompat="@drawable/rating_" />
 
     <ImageView
         android:id="@+id/ImageMovie"
-        android:layout_width="wrap_content"
-        android:layout_height="101dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="200dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="-100dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView37"
+        app:layout_constraintEnd_toEndOf="@+id/imageView37"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/imageView37"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/MovieText2"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:fontFamily="sans-serif-black"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+        app:layout_constraintEnd_toEndOf="@+id/ImageMovie"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="@+id/ImageMovie"
+        app:layout_constraintTop_toBottomOf="@+id/ImageMovie"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <TextView
+        android:id="@+id/MovieText1"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="250dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="TextView"
+        android:textColor="#BB97C1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+        app:layout_constraintEnd_toEndOf="@+id/imageView37"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView40"
+        app:layout_constraintTop_toBottomOf="@+id/MovieText2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="135dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="159dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="TextView"
+        android:textColor="#BB97C1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+        app:layout_constraintEnd_toEndOf="@+id/imageView37"
+        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintStart_toStartOf="@+id/imageView37"
+        app:layout_constraintTop_toBottomOf="@+id/overview"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/overview"
+        android:layout_width="214dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="228dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="TextView"
+        android:textColor="#BB97C1"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+        app:layout_constraintEnd_toEndOf="@+id/imageView37"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView37"
+        app:layout_constraintTop_toBottomOf="@+id/MovieText1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView44"
+        android:layout_width="65dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+        app:layout_constraintEnd_toStartOf="@+id/overview"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView37"
+        app:layout_constraintTop_toBottomOf="@+id/imageView40"
+        app:layout_constraintVertical_bias="0.116"
+        app:srcCompat="@drawable/overview_" />
+
+    <ImageView
+        android:id="@+id/imageView66"
+        android:layout_width="82dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+        app:layout_constraintEnd_toEndOf="@+id/imageView37"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="@+id/imageView37"
+        app:layout_constraintTop_toBottomOf="@+id/imageView44"
+        app:layout_constraintVertical_bias="0.17"
+        app:srcCompat="@drawable/release_date_" />
 </androidx.constraintlayout.widget.ConstraintLayout>

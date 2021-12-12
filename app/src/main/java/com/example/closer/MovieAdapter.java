@@ -37,7 +37,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
      holder.id.setText(mData.get(position).getId());
      holder.name.setText(mData.get(position).getName());
-
+     holder.overview.setText(mData.get(position).getOverview());
+     holder.date.setText(mData.get(position).getRelease_date());
      //Using Glide to put the image
       //  https://image.tmdb.org/t/p/w500/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg
         Glide.with(mContext).load("https://image.tmdb.org/t/p/w500"+mData.get(position).getImg()).into(holder.img);
@@ -54,11 +55,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         TextView id;
         TextView name;
         ImageView img;
+        TextView overview;
+        TextView date;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             id=itemView.findViewById(R.id.MovieText1);
             name=itemView.findViewById(R.id.MovieText2);
             img=itemView.findViewById(R.id.ImageMovie);
+            overview=itemView.findViewById(R.id.overview);
+            date=itemView.findViewById(R.id.date);
         }
     }
 }

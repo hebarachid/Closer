@@ -85,7 +85,8 @@ public class MovieDisplayer extends AppCompatActivity {
                     model.setId(jsonObject1.getString("vote_average"));
                     model.setName(jsonObject1.getString("title"));
                     model.setImg(jsonObject1.getString("poster_path"));
-
+                    model.setOverview(jsonObject1.getString("overview"));
+                    model.setRelease_date(jsonObject1.getString("release_date"));
                     movieList.add(model);
                 }
 
