@@ -68,6 +68,7 @@
         android:background="#00000000"
         android:minWidth="48dp"
         android:minHeight="48dp"
+        android:onClick="skip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="1.0"

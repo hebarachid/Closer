@@ -159,4 +159,12 @@ String currentDate=formatter.format(date);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
+
+    public void Randomize(View view) {
+        Intent intent = new Intent(getApplicationContext(), QuestionsNight.class);
+        intent.putExtra("userEmail",userEmail);
+        intent.putExtra("partnerEmail",partnerEmail);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+    }
 }
